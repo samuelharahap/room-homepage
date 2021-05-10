@@ -1,5 +1,6 @@
 .sliderContainer {
   position: relative;
+  flex: 0 0 58.4%;
 }
 
 .sliderNavigationContainer {

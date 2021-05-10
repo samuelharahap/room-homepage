@@ -1,12 +1,12 @@
 import './App.css'
 import Slider from './components/Slider'
+import Jumbotron from './components/Jumbotron'
 
 function App() {
   return (
     <div className="u-display-flex">
-      <div className="slider-container">
-        <Slider />
-      </div>
+      <Slider />
+      <Jumbotron />
     </div>
   )
 }
