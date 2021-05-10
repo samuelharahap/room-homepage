@@ -4,7 +4,7 @@ import Jumbotron from './components/Jumbotron'
 
 function App() {
   return (
-    <div className="u-display-flex">
+    <div>
       <Slider />
       <Jumbotron />
     </div>

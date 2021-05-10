@@ -366,15 +366,14 @@ body {
   flex-grow: 1;
 }
 
-h1 {
-  font-size: 38px;
-  margin: 0 0 38px 0;
-  letter-spacing: -1px;
+.main-heading {
   font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 28px;
 }
 
-p {
+.default-paragraph {
   color: hsl(0, 0%, 63%);
-  line-height: 1.65;
+  line-height: 1.8;
   letter-spacing: -0.4px;
 }

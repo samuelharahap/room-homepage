@@ -1,18 +1,30 @@
-.sliderContainer {
+.slider {
+  overflow: hidden;
   position: relative;
-  flex: 0 0 58.4%;
+}
+
+.sliderContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  /* flex: 0 0 58.4%; */
+}
+
+.sliderItem {
+  width: 100%;
 }
 
 .sliderNavigationContainer {
   position: absolute;
   bottom: 0;
-  right: -160px;
+  right: 0;
 }
 
 .sliderNavigation {
   background-color: hsl(0, 0%, 0%);
-  height: 80px;
-  width: 80px;
+  height: 55px;
+  width: 55px;
   cursor: pointer;
   border: none;
   transition: background-color 0.2s;
