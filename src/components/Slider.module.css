@@ -1,0 +1,22 @@
+.sliderContainer {
+  position: relative;
+}
+
+.sliderNavigationContainer {
+  position: absolute;
+  bottom: 0;
+  right: -160px;
+}
+
+.sliderNavigation {
+  background-color: hsl(0, 0%, 0%);
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.sliderNavigation:hover {
+  background-color: hsl(0, 0%, 63%);
+}
