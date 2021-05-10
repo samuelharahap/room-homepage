@@ -5,7 +5,7 @@ function Jumbotron() {
   return (
     <div className={styles.jumbotronContainer}>
       <h1 className="main-heading">Discover innovative ways to decorate</h1>
-      <p className="default-paragraph">
+      <p className="default-paragraph mb-0">
         We provide unmatched quality, comfort, and style for property owners
         across the country. Our experts combine form and function in bringing
         your vision to life. Create a room in your own style with our collection

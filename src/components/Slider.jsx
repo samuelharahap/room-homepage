@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// import TinySlider from 'tiny-slider-react'
 
 import slidesItem1 from '../images/mobile-image-hero-1.jpg'
 import slidesItem2 from '../images/mobile-image-hero-2.jpg'
@@ -37,7 +36,6 @@ function Slider() {
           <img
             key={`slider-item-${index}`}
             src={slide}
-            data-src={slide}
             alt={`slider-item-${index}`}
             className={styles.sliderItem}
           />

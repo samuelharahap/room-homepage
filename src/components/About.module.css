@@ -1,0 +1,8 @@
+.aboutContainer {
+  flex-grow: 1;
+  padding: 62px 36px;
+}
+
+.aboutImage {
+  width: 100%;
+}

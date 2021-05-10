@@ -149,6 +149,7 @@ sup {
 
 img {
   border-style: none;
+  display: block;
 }
 
 /* Forms
@@ -376,4 +377,15 @@ body {
   color: hsl(0, 0%, 63%);
   line-height: 1.8;
   letter-spacing: -0.4px;
+}
+
+.sub-heading {
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
 }
