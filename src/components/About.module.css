@@ -6,3 +6,9 @@
 .aboutImage {
   width: 100%;
 }
+
+@media screen and (min-width: 789px) {
+  .aboutSectionContainer {
+    display: flex;
+  }
+}

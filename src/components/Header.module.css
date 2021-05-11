@@ -9,21 +9,27 @@
   -webkit-transition: background-color 0.3s ease-in-out;
 }
 
-.headerShown {
-  background-color: white;
-}
+@media screen and (max-width: 768px) {
+  .headerShown {
+    background-color: #fff;
+  }
 
-.headerShown .logo {
-  display: none;
+  .headerShown .logo {
+    display: none;
+  }
+
+  .headerShown .listMenu {
+    display: inline-block;
+  }
 }
 
 .headerInvert {
-  background-color: white;
+  background-color: #fff;
 }
 
 .headerInvert .burgerIcon path,
 .headerInvert .logoIcon path {
-  fill: black;
+  fill: #000;
 }
 
 .logo {
@@ -50,6 +56,22 @@
 .listMenu > li {
   display: inline-block;
   margin-left: 34px;
+  position: relative;
+}
+
+.listMenu > li:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  opacity: 0;
 }
 
 .listMenu > li > a {
@@ -58,6 +80,36 @@
   font-weight: 600;
 }
 
-.headerShown .listMenu {
-  display: inline-block;
+@media screen and (min-width: 769px) {
+  .menuTrigger {
+    display: none;
+  }
+
+  .menuContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .listMenu {
+    display: block;
+  }
+
+  .listMenu > li > a {
+    color: #fff;
+    font-size: 13px;
+  }
+
+  .listMenu > li:hover:after {
+    width: 55%;
+    height: 2px;
+    opacity: 1;
+  }
+
+  .headerInvert .listMenu > li > a {
+    color: #000;
+  }
+
+  .logo {
+    margin-right: 60px;
+  }
 }

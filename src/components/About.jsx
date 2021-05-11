@@ -5,7 +5,7 @@ import imageAboutLight from '../images/image-about-light.jpg'
 
 function About() {
   return (
-    <div>
+    <div className={styles.aboutSectionContainer}>
       <img
         src={imageAboutDark}
         alt="about-dark"

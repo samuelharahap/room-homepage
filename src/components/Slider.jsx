@@ -1,8 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-import slidesItem1 from '../images/mobile-image-hero-1.jpg'
-import slidesItem2 from '../images/mobile-image-hero-2.jpg'
-import slidesItem3 from '../images/mobile-image-hero-3.jpg'
+import slidesItemDesktop1 from '../images/desktop-image-hero-1.jpg'
+import slidesItemDesktop2 from '../images/desktop-image-hero-2.jpg'
+import slidesItemDesktop3 from '../images/desktop-image-hero-3.jpg'
+
+import slidesItemMobile1 from '../images/mobile-image-hero-1.jpg'
+import slidesItemMobile2 from '../images/mobile-image-hero-2.jpg'
+import slidesItemMobile3 from '../images/mobile-image-hero-3.jpg'
+
 import jumbotronSlides from '../data/jumbotron'
 
 import { ReactComponent as PrevSlideIcon } from '../images/icon-angle-left.svg'
@@ -12,12 +17,25 @@ import { ReactComponent as ArrowIcon } from '../images/icon-arrow.svg'
 import styles from './Slider.module.css'
 
 function Slider() {
-  const slides = [slidesItem1, slidesItem2, slidesItem3]
-
   const [activeSliderIdx, setActiveSliderIdx] = useState(0)
+  const [sliderItems, setSliderItem] = useState([])
+
+  useEffect(() => {
+    function handleResize() {
+      setSliderItem(
+        window.innerWidth > 768
+          ? [slidesItemDesktop1, slidesItemDesktop2, slidesItemDesktop3]
+          : [slidesItemMobile1, slidesItemMobile2, slidesItemMobile3]
+      )
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const goTo = (dir) => {
-    const lastIndex = slides.length - 1
+    const lastIndex = sliderItems.length - 1
     const getNewIndex = {
       next: () => (activeSliderIdx === lastIndex ? 0 : activeSliderIdx + 1),
       prev: () => (activeSliderIdx === 0 ? lastIndex : activeSliderIdx - 1)
@@ -28,7 +46,7 @@ function Slider() {
   }
 
   return (
-    <div>
+    <div className={styles.sliderSectionContainer}>
       <div id="slider-container" className={styles.slider}>
         <div
           className={styles.sliderContainer}
@@ -36,7 +54,7 @@ function Slider() {
             transform: `translateX(${activeSliderIdx * -100}%)`
           }}
         >
-          {slides.map((slide, index) => (
+          {sliderItems.map((slide, index) => (
             <img
               key={`slider-item-${index}`}
               src={slide}
