@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import slidesItemDesktop1 from '../images/desktop-image-hero-1.jpg'
 import slidesItemDesktop2 from '../images/desktop-image-hero-2.jpg'
@@ -18,21 +18,20 @@ import styles from './Slider.module.css'
 
 function Slider() {
   const [activeSliderIdx, setActiveSliderIdx] = useState(0)
-  const [sliderItems, setSliderItem] = useState([])
-
-  useEffect(() => {
-    function handleResize() {
-      setSliderItem(
-        window.innerWidth > 768
-          ? [slidesItemDesktop1, slidesItemDesktop2, slidesItemDesktop3]
-          : [slidesItemMobile1, slidesItemMobile2, slidesItemMobile3]
-      )
+  const sliderItems = [
+    {
+      desktop: slidesItemDesktop1,
+      mobile: slidesItemMobile1
+    },
+    {
+      desktop: slidesItemDesktop2,
+      mobile: slidesItemMobile2
+    },
+    {
+      desktop: slidesItemDesktop3,
+      mobile: slidesItemMobile3
     }
-
-    window.addEventListener('resize', handleResize)
-    handleResize()
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  ]
 
   const goTo = (dir) => {
     const lastIndex = sliderItems.length - 1
@@ -58,9 +57,13 @@ function Slider() {
             {sliderItems.map((slide, index) => (
               <img
                 key={`slider-item-${index}`}
-                src={slide}
                 alt={`slider-item-${index}`}
                 className={styles.sliderItem}
+                srcset={`${slide.mobile} 375w,
+                        ${slide.desktop} 840w`}
+                sizes="(max-width: 768px) 375px,
+                      840px"
+                src={slide.mobile}
               />
             ))}
           </div>
