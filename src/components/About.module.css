@@ -11,4 +11,9 @@
   .aboutSectionContainer {
     display: flex;
   }
+
+  .aboutImage {
+    width: 29.1%;
+    object-fit: cover;
+  }
 }

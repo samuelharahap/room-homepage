@@ -48,20 +48,22 @@ function Slider() {
   return (
     <div className={styles.sliderSectionContainer}>
       <div id="slider-container" className={styles.slider}>
-        <div
-          className={styles.sliderContainer}
-          style={{
-            transform: `translateX(${activeSliderIdx * -100}%)`
-          }}
-        >
-          {sliderItems.map((slide, index) => (
-            <img
-              key={`slider-item-${index}`}
-              src={slide}
-              alt={`slider-item-${index}`}
-              className={styles.sliderItem}
-            />
-          ))}
+        <div className={styles.sliderWrapper}>
+          <div
+            className={styles.sliderContainer}
+            style={{
+              transform: `translateX(${activeSliderIdx * -100}%)`
+            }}
+          >
+            {sliderItems.map((slide, index) => (
+              <img
+                key={`slider-item-${index}`}
+                src={slide}
+                alt={`slider-item-${index}`}
+                className={styles.sliderItem}
+              />
+            ))}
+          </div>
         </div>
         <div className={styles.sliderNavigationContainer}>
           <button

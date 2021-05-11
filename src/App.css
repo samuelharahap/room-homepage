@@ -398,3 +398,9 @@ body {
 .u-pointer {
   cursor: pointer;
 }
+
+@media screen and (min-width: 769px) {
+  .main-heading {
+    font-size: 3em;
+  }
+}

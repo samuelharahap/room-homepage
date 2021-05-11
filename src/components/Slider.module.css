@@ -1,24 +1,31 @@
 .slider {
-  overflow: hidden;
   position: relative;
 }
 
+.sliderWrapper {
+  overflow: hidden;
+  height: 100%;
+}
+
 .sliderContainer {
+  height: 100%;
   display: flex;
   flex-wrap: nowrap;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
-  /* flex: 0 0 58.4%; */
 }
 
 .sliderItem {
   flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .sliderNavigationContainer {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 1;
 }
 
 .sliderNavigation {
@@ -55,7 +62,7 @@
 .jumbotronLink {
   text-decoration: none;
   color: hsl(0, 0%, 0%);
-  margin-top: 36px;
+  margin-top: 32px;
   letter-spacing: 8px;
   display: inline-block;
   opacity: 1;
@@ -82,5 +89,9 @@
 
   .sliderNavigationContainer {
     right: -160px;
+  }
+
+  .jumbotronSliderItem {
+    padding: 100px;
   }
 }
