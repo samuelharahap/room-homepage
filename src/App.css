@@ -363,6 +363,10 @@ body {
   display: flex;
 }
 
+.u-display-flex-align-center {
+  align-items: center;
+}
+
 .u-display-flex-grow-1 {
   flex-grow: 1;
 }
@@ -389,4 +393,8 @@ body {
 
 .mb-0 {
   margin-bottom: 0;
+}
+
+.u-pointer {
+  cursor: pointer;
 }

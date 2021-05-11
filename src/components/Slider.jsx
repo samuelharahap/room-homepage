@@ -29,7 +29,7 @@ function Slider() {
 
   return (
     <div>
-      <div className={styles.slider}>
+      <div id="slider-container" className={styles.slider}>
         <div
           className={styles.sliderContainer}
           style={{
@@ -69,8 +69,11 @@ function Slider() {
             transform: `translateX(${activeSliderIdx * -100}%)`
           }}
         >
-          {jumbotronSlides.map((jumbotron) => (
-            <div className={styles.jumbotronSliderItem}>
+          {jumbotronSlides.map((jumbotron, index) => (
+            <div
+              className={styles.jumbotronSliderItem}
+              key={`jumbotron-slider-item-${index}`}
+            >
               <h2 className="main-heading">{jumbotron.title}</h2>
               <p className="default-paragraph mb-0">{jumbotron.paragraph}</p>
               <a className={styles.jumbotronLink} href="#">

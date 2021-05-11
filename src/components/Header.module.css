@@ -1,0 +1,63 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 48px 26px;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+}
+
+.headerShown {
+  background-color: white;
+}
+
+.headerShown .logo {
+  display: none;
+}
+
+.headerInvert {
+  background-color: white;
+}
+
+.headerInvert .burgerIcon path,
+.headerInvert .logoIcon path {
+  fill: black;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.menuContainer {
+  text-align: center;
+}
+
+.menuTrigger {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.listMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.listMenu > li {
+  display: inline-block;
+  margin-left: 34px;
+}
+
+.listMenu > li > a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.headerShown .listMenu {
+  display: inline-block;
+}

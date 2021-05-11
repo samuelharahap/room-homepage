@@ -1,4 +1,4 @@
-export default [
+const jumbotronSlides = [
   {
     title: 'Discover innovative ways to decorate',
     paragraph: `We provide unmatched quality, comfort, and style for property owners across the country. 
@@ -18,3 +18,5 @@ export default [
       experience in this industry, we understand what customers want for their home and office.`
   }
 ]
+
+export default jumbotronSlides
