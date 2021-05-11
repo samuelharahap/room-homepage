@@ -12,7 +12,7 @@
 }
 
 .sliderItem {
-  width: 100%;
+  flex: 0 0 100%;
 }
 
 .sliderNavigationContainer {
@@ -32,4 +32,36 @@
 
 .sliderNavigation:hover {
   background-color: hsl(0, 0%, 63%);
+}
+
+.jumbotronSlider {
+  overflow: hidden;
+}
+
+.jumbotronSliderContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+}
+
+.jumbotronSliderItem {
+  flex-grow: 1;
+  padding: 72px 36px;
+  flex: 0 0 100%;
+  box-sizing: border-box;
+}
+
+.jumbotronLink {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+  margin-top: 36px;
+  letter-spacing: 8px;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.jumbotronLink:hover {
+  opacity: 0.6;
 }
