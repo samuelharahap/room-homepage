@@ -1,0 +1,102 @@
+.sliderColumn {
+  position: relative;
+}
+
+.sliderWrapper {
+  overflow: hidden;
+  height: 100%;
+}
+
+.sliderContainer {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+}
+
+.sliderItem {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.sliderItemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sliderNavigationContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.sliderNavigation {
+  background-color: hsl(0, 0%, 0%);
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.sliderNavigation:hover {
+  background-color: hsl(0, 0%, 63%);
+}
+
+.jumbotronSlider {
+  overflow: hidden;
+}
+
+.jumbotronSliderContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+}
+
+.jumbotronSliderItem {
+  flex-grow: 1;
+  padding: 72px 36px;
+  flex: 0 0 100%;
+  box-sizing: border-box;
+}
+
+.jumbotronLink {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+  margin-top: 32px;
+  letter-spacing: 8px;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.jumbotronLink:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 769px) {
+  .sliderSectionContainer {
+    display: flex;
+  }
+
+  .sliderColumn {
+    flex: 0 0 58.4%;
+  }
+
+  .sliderNavigation {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sliderNavigationContainer {
+    right: -160px;
+  }
+
+  .jumbotronSliderItem {
+    padding: 100px;
+  }
+}
