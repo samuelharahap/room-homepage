@@ -55,16 +55,14 @@ function Slider() {
             }}
           >
             {sliderItems.map((slide, index) => (
-              <img
+              <picture
                 key={`slider-item-${index}`}
-                alt={`slider-item-${index}`}
                 className={styles.sliderItem}
-                srcset={`${slide.mobile} 375w,
-                        ${slide.desktop} 840w`}
-                sizes="(max-width: 768px) 375px,
-                      840px"
-                src={slide.mobile}
-              />
+              >
+                <source media="(max-width: 768px)" srcset={slide.mobile} />
+                <source srcset={slide.desktop} />
+                <img className={styles.sliderItemImage} alt={`slider-item-${index}`} src={slide.mobile} />
+              </picture>
             ))}
           </div>
         </div>
