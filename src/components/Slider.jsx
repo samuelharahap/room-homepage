@@ -46,9 +46,10 @@ function Slider() {
 
   return (
     <div className={styles.sliderSectionContainer}>
-      <div id="slider-container" className={styles.slider}>
+      <div className={styles.sliderColumn}>
         <div className={styles.sliderWrapper}>
           <div
+            id="slider-container"
             className={styles.sliderContainer}
             style={{
               transform: `translateX(${activeSliderIdx * -100}%)`
@@ -61,7 +62,11 @@ function Slider() {
               >
                 <source media="(max-width: 768px)" srcset={slide.mobile} />
                 <source srcset={slide.desktop} />
-                <img className={styles.sliderItemImage} alt={`slider-item-${index}`} src={slide.mobile} />
+                <img
+                  className={styles.sliderItemImage}
+                  alt={`slider-item-${index}`}
+                  src={slide.mobile}
+                />
               </picture>
             ))}
           </div>

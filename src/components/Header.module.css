@@ -1,4 +1,4 @@
-.header {
+.headerContainer {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,11 +14,11 @@
     background-color: #fff;
   }
 
-  .headerShown .logo {
+  .headerShown .logoContainer {
     display: none;
   }
 
-  .headerShown .listMenu {
+  .headerShown .menu {
     display: inline-block;
   }
 }
@@ -32,7 +32,7 @@
   fill: #000;
 }
 
-.logo {
+.logoContainer {
   display: inline-block;
 }
 
@@ -46,20 +46,20 @@
   padding: 0;
 }
 
-.listMenu {
+.menu {
   list-style: none;
   margin: 0;
   padding: 0;
   display: none;
 }
 
-.listMenu > li {
+.menuItem {
   display: inline-block;
   margin-left: 34px;
   position: relative;
 }
 
-.listMenu > li:after {
+.menuItem:after {
   content: '';
   display: block;
   width: 0;
@@ -74,7 +74,7 @@
   opacity: 0;
 }
 
-.listMenu > li > a {
+.menuLink {
   text-decoration: none;
   color: black;
   font-weight: 600;
@@ -90,26 +90,26 @@
     align-items: center;
   }
 
-  .listMenu {
+  .menu {
     display: block;
   }
 
-  .listMenu > li > a {
+  .menuLink {
     color: #fff;
     font-size: 13px;
   }
 
-  .listMenu > li:hover:after {
+  .menuItem:hover:after {
     width: 55%;
     height: 2px;
     opacity: 1;
   }
 
-  .headerInvert .listMenu > li > a {
+  .headerInvert .menuLink {
     color: #000;
   }
 
-  .logo {
+  .logoContainer {
     margin-right: 60px;
   }
 }

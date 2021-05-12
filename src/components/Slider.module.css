@@ -1,4 +1,4 @@
-.slider {
+.sliderColumn {
   position: relative;
 }
 
@@ -83,7 +83,7 @@
     display: flex;
   }
 
-  .slider {
+  .sliderColumn {
     flex: 0 0 58.4%;
   }
 

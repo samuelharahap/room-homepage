@@ -10,6 +10,8 @@ function Header() {
   const [isMenuShown, setIsMenuShown] = useState(false)
   const [isMenuInvert, setIsMenuInvert] = useState(false)
 
+  const menu = ['home', 'shop', 'about', 'contact']
+
   useEffect(() => {
     const observer = new IntersectionObserver(function (entries) {
       setIsMenuInvert(!entries[0]?.isIntersecting)
@@ -21,9 +23,11 @@ function Header() {
 
   return (
     <div
-      className={`u-display-flex u-display-flex-align-center ${styles.header} ${
-        isMenuShown ? styles.headerShown : ''
-      } ${isMenuInvert ? styles.headerInvert : ''}`}
+      className={`u-display-flex u-display-flex-align-center ${
+        styles.headerContainer
+      } ${isMenuShown ? styles.headerShown : ''} ${
+        isMenuInvert ? styles.headerInvert : ''
+      }`}
     >
       <button
         className={`u-pointer ${styles.menuTrigger}`}
@@ -37,23 +41,18 @@ function Header() {
         )}
       </button>
       <div className={`u-display-flex-grow-1 ${styles.menuContainer}`}>
-        <a className={styles.logo} href="/">
+        <a className={styles.logoContainer} href="/">
           <Logo className={styles.logoIcon} />
         </a>
         <nav>
-          <ul className={styles.listMenu}>
-            <li>
-              <a href="/">home</a>
-            </li>
-            <li>
-              <a href="/">shop</a>
-            </li>
-            <li>
-              <a href="/">about</a>
-            </li>
-            <li>
-              <a href="/">contact</a>
-            </li>
+          <ul className={styles.menu}>
+            {menu.map((menuItem, index) => (
+              <li className={styles.menuItem} key={`menu-item-${index}`}>
+                <a href="/" className={styles.menuLink}>
+                  {menuItem}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
