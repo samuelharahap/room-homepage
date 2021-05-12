@@ -16,7 +16,7 @@ function Header() {
     const observer = new IntersectionObserver(function (entries) {
       setIsMenuInvert(!entries[0]?.isIntersecting)
     })
-    observer.observe(document.getElementById('slider-container'))
+    observer.observe(document.getElementById('slider-column'))
 
     return () => observer.disconnect()
   })
